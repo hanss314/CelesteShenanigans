@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF1DCA24-675B-4A08-B767-8852868AF631}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GrappleHook</RootNamespace>
+    <AssemblyName>GrappleHook</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Celeste">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\Celeste.exe</HintPath>
+    </Reference>
+    <Reference Include="FNA">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\FNA.dll</HintPath>
+    </Reference>
+    <Reference Include="MMHOOK_Celeste">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\MMHOOK_Celeste.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\MonoMod.exe</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\.steam\steam\steamapps\common\Celeste\Mono.Cecil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GrappleHook.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CelesteHot.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="everest.yaml" />
+    <None Include="Dialog\English.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
